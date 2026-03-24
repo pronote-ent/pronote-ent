@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Mon Profil - Pronote</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body { background: #f4f6f9; }
+    .profile-card { border-radius: 15px; border: none; overflow: hidden; }
+    .profile-header { background: #212529; color: white; padding: 30px; text-align: center; }
+    .info-label { font-weight: bold; color: #6c757d; text-transform: uppercase; font-size: 0.8rem; margin-bottom: 2px; }
+    .info-value { font-size: 1.1rem; color: #212529; margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 8px; }
+    .avatar-circle { width: 100px; height: 100px; background: #0dcaf0; border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; font-weight: bold; border: 4px solid rgba(255,255,255,0.2); }
+  </style>
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+  <div class="container-fluid">
+    <a class="navbar-brand fw-bold">Pronote - Profile</a>
+    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="nav">
+      <ul class="navbar-nav ms-auto text-center">
+        <li class="nav-item"><a class="nav-link" href="accueil.html">Accueil</a></li>
+        <li class="nav-item"><a class="nav-link" href="planning.html">Planning</a></li>
+        <li class="nav-item"><a class="nav-link" href="notes.html">Notes</a></li>
+        <li class="nav-item"><a class="nav-link" href="absences.html">Absences</a></li>
+        <li class="nav-item"><a class="nav-link active" href="profil.html">Profil</a></li>
+        <li class="nav-item">
+          <button onclick="logout()" class="btn btn-danger mt-2 mt-lg-0 ms-lg-3">Déconnexion</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container py-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8 col-lg-6">
+      
+      <div class="card profile-card shadow">
+        <div class="profile-header">
+          <div class="avatar-circle">LZ</div>
+          <h4 class="mb-0">Lehna ZERIZER</h4>
+          <p class="mb-0 opacity-75">Classe : TMRCA</p>
+        </div>
+        
+        <div class="card-body p-4">
+          <div class="info-label">Téléphone portable</div>
+          <div class="info-value">06 50 41 86 71</div>
+
+          <div class="info-label">Courriel électronique</div>
+          <div class="info-value">lehnazer@gmail.com</div>
+
+          <div class="info-label">Adresse</div>
+          <div class="info-value">30 rue de l'union<br>95460 Ezanville</div>
+
+          <div class="info-label">Statut</div>
+          <div class="info-value">Redoublante</div>
+
+          <div class="info-label">Numéro INE</div>
+          <div class="info-value fw-bold text-primary">121005772HK</div>
+        </div>
+        
+        <div class="card-footer bg-white border-0 text-center pb-4">
+          <button type="button" class="btn btn-secondary px-4 py-2 shadow-sm" 
+                  style="opacity: 0.8;" 
+                  data-bs-toggle="modal" 
+                  data-bs-target="#errorModal">
+            <span style="margin-right: 8px;">🔒</span> Modifier mes coordonnées
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="errorModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content shadow-lg border-0">
+      <div class="modal-header border-bottom-0 bg-light">
+        <h5 class="modal-title text-dark fw-bold">⚠️ Action impossible</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body text-center py-4">
+        <span style="font-size: 2rem; display: block; margin-bottom: 15px;">⚙️</span>
+        <p class="fs-6 text-secondary">Au vu d'un problème informatique, vous ne pouvez pas modifier vos coordonnées pour le moment.</p>
+      </div>
+      <div class="modal-footer border-top-0 justify-content-center pb-4">
+        <button type="button" class="btn btn-dark px-5 rounded-pill" data-bs-dismiss="modal">D'accord</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function logout() {
+      window.location.href = "index.html";
+  }
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

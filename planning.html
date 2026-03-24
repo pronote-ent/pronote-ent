@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Planning - Pronote</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body { background: #f4f6f9; }
+    .schedule { overflow-x: auto; }
+    table { min-width: 900px; text-align: center; }
+    th { background: #212529; color: white; border: 1px solid #343a40 !important; }
+    td { height: 70px; vertical-align: middle; font-size: 0.85rem; padding: 4px !important; }
+    .course { border-radius: 6px; padding: 8px 4px; color: white; font-weight: 500; height: 100%; display: flex; align-items: center; justify-content: center; line-height: 1.1; }
+
+    /* Couleurs des matières */
+    .esp { background: #e83e8c; } /* Rose */
+    .math { background: #0d6efd; } /* Bleu */
+    .ang { background: #198754; } /* Vert */
+    .manag { background: #6f42c1; } /* Violet */
+    .merca { background: #fd7e14; } /* Orange */
+    .sport { background: #20c997; } /* Turquoise */
+    .philo { background: #6c757d; } /* Gris */
+    .hist { background: #0dcaf0; } /* Cyan */
+    .etlv { background: #d63384; } /* Fuchsia */
+    .droit { background: #6610f2; } /* Indigo */
+    .emc { background: #adb5bd; } /* Gris clair */
+  </style>
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+  <div class="container-fluid">
+    <a class="navbar-brand fw-bold">Pronote - Planning</a>
+    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="nav">
+      <ul class="navbar-nav ms-auto text-center">
+        <li class="nav-item"><a class="nav-link" href="accueil.html">Accueil</a></li>
+        <li class="nav-item"><a class="nav-link active" href="planning.html">Planning</a></li>
+        <li class="nav-item"><a class="nav-link" href="notes.html">Notes</a></li>
+        <li class="nav-item"><a class="nav-link" href="absences.html">Absences</a></li>
+        <li class="nav-item"><a class="nav-link" href="profil.html">Profil</a></li>
+        <li class="nav-item">
+          <button onclick="logout()" class="btn btn-danger mt-2 mt-lg-0 ms-lg-3">Déconnexion</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container-fluid py-4">
+  <h3 class="mb-4 text-center">📅 Emploi du temps - 2026</h3>
+
+  <div class="card shadow-sm p-2 schedule border-0">
+    <table class="table table-bordered align-middle mb-0">
+      <thead>
+        <tr>
+          <th style="width: 100px;">Heure</th>
+          <th>Lundi</th>
+          <th>Mardi</th>
+          <th>Mercredi</th>
+          <th>Jeudi</th>
+          <th>Vendredi</th>
+        </tr>
+      </thead>
+<tbody>
+        <tr>
+          <th class="table-light text-dark text-nowrap">08h30 - 09h30</th>
+          <td class="bg-white"></td>
+          <td><div class="course merca">Mercatique</div></td>
+          <td><div class="course ang">Anglais LV1</div></td>
+          <td rowspan="2"><div class="course manag">Manag SC GEST NUM</div></td>
+          <td rowspan="2"><div class="course droit">Droit et économiques</div></td>
+        </tr>
+        <tr>
+          <th class="table-light text-dark text-nowrap">09h30 - 10h30</th>
+          <td class="bg-white"></td>
+          <td><div class="course manag">Manag SC GEST NUM</div></td>
+          <td><div class="course hist">Histoire Géo</div></td>
+        </tr>
+        <tr>
+          <th class="table-light text-dark text-nowrap">10h30 - 11h30</th>
+          <td><div class="course math">Mathématiques</div></td>
+          <td rowspan="2"><div class="course sport">ED Physiques et sport</div></td>
+          <td><div class="course math">Mathématiques</div></td>
+          <td><div class="course etlv">ETLV</div></td>
+          <td><div class="course math">Mathématiques</div></td>
+        </tr>
+        <tr>
+          <th class="table-light text-dark text-nowrap">11h30 - 12h30</th>
+          <td><div class="course ang">Anglais LV1</div></td>
+          <td class="bg-light text-muted small"></td>
+          <td><div class="course esp">Espagnol LV2</div></td>
+          <td><div class="course droit">Droit et économiques</div></td>
+        </tr>
+        <tr class="table-light">
+          <th class="small py-1">12h30 - 14h00</th>
+          <td colspan="5" class="bg-light text-muted small text-uppercase">Pause Déjeuner</td>
+        </tr>
+        <tr>
+          <th class="table-light text-dark text-nowrap">14h00 - 15h00</th>
+          <td><div class="course ang">Anglais LV1</div></td>
+          <td rowspan="2"><div class="course manag">Manag SC GEST NUM</div></td>
+          <td></td>
+          <td rowspan="2"><div class="course droit">Droit et économiques</div></td>
+          <td class="bg-white"></td>
+        </tr>
+        <tr>
+          <th class="table-light text-dark text-nowrap">15h00 - 16h00</th>
+          <td><div class="course manag">Manag SC GEST NUM</div></td>
+          <td></td>
+          <td><div class="course droit">Droit et économiques</div></td>
+        </tr>
+        <tr>
+          <th class="table-light text-dark text-nowrap">16h00 - 17h00</th>
+          <td rowspan="2"><div class="course merca">Mercatiques</div></td>
+          <td rowspan="2"><div class="course philo">Philosophie</div></td>
+          <td rowspan="2"><div class="course sport">ED Physiques et sport</div></td>
+          <td><div class="course emc">EMC</div></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th class="table-light text-dark text-nowrap border-bottom border-dark">17h00 - 18h00</th>
+          <td><div class="course ang">Anglais LV1</div></td>
+          <td><div class="course merca">Mercatiques</div></td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<script>
+  function logout() {
+      alert("Déconnexion en cours...");
+      window.location.href = "index.html";
+  }
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
